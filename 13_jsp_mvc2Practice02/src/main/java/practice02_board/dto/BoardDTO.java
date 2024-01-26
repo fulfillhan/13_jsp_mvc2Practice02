@@ -2,7 +2,7 @@ package practice02_board.dto;
 
 import java.sql.Date;
 
-public class BoardDTO_02 {
+public class BoardDTO {
 	
 	private long boardId;
 	private String email;
