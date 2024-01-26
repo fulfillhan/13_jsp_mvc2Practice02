@@ -33,7 +33,7 @@
 					<td>글내용</td>
 					<td>
 						<textarea rows="10" cols="50" name="content" ></textarea>
-						
+						<script>CKEDITOR.replace("content");</script>
 					</td>
 				</tr>
 				<tr align="center">

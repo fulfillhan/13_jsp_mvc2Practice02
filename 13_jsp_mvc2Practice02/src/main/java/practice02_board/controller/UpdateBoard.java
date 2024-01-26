@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import practice02_board.dao.BoardDAO;
 import practice02_board.dto.BoardDTO;
 
-/**
- * Servlet implementation class UpdateBoard
- */
+
 @WebServlet("/bUpdate")
 public class UpdateBoard extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -43,13 +41,15 @@ public class UpdateBoard extends HttpServlet {
 		boardDTO.setBoardId(Long.parseLong(request.getParameter("boardId")));
 		boardDTO.setSubject(request.getParameter("subject"));
 		boardDTO.setContent(request.getParameter("content"));
-		//-> 여기서부터
+	
 		BoardDAO.getInstance().UpdateBoard(boardDTO);
+		System.out.println(boardDTO);
 		
 		String jsScript = """
 				<script>
 					alert('수정이 완료되었습니다');
 					location.href='bList';
+				</script>
 				""";
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
